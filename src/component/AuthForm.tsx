@@ -16,9 +16,8 @@ const AuthForm = () => {
 
   const appContext = useContext(AppContext);
 
-  console.log(appContext, "appcontext for checking url");
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(state, "state");
     e.preventDefault();
     try {
       if (state === "Login") {
@@ -30,8 +29,6 @@ const AuthForm = () => {
               password,
             }
           );
-
-        console.log(data, "from auth form");
 
         if (data.success && typeof data.message === "object") {
           appContext?.setToken(data?.message?.token);
