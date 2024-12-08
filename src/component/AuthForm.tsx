@@ -16,6 +16,8 @@ const AuthForm = () => {
 
   const appContext = useContext(AppContext);
 
+  console.log(appContext, "appcontext for checking url");
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
